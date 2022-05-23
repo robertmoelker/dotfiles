@@ -25,9 +25,16 @@ keymap('n', '<C-d>', ':NvimTreeFindFile<CR>', opts)
 keymap('n', '<leader>f', ':Telescope find_files<CR>', opts)
 keymap('n', '<leader>g', ':Telescope live_grep<CR>', opts)
 
+-- Toggleterm
+keymap('n', '<leader>t', ':TermExec cmd="cd %:p:h" direction=float<CR>', opts)
+
 -- Easy way to go through buffers
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
+keymap('n', '<A-l>', ':bnext<CR>', opts)
+keymap('n', '<A-h>', ':bprevious<CR>', opts)
+
+keymap('n', '<C-f>', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 2000)<CR>', opts)
 
 -- Skip the need to press :q to quit
 keymap('n', 'qq', ':q<CR>', opts)

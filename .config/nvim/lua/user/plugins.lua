@@ -22,6 +22,7 @@ return packer.startup(function()
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-autopairs'
   use 'kyazdani42/nvim-tree.lua'
+  use 'tpope/vim-commentary'
 
   -- Autocomplete plugins
   use 'neovim/nvim-lspconfig'
@@ -30,10 +31,13 @@ return packer.startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  
+  -- Snippet plugins
+  use 'hrs7th/cmp-vsnip'
+  use 'hrs7th/vim-vsnip'
 
    -- Formatting & linters
   use 'jose-elias-alvarez/null-ls.nvim'
-
 
   use {
     'nvim-treesitter/nvim-treesitter',

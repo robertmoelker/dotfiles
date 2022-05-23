@@ -42,6 +42,7 @@ keymap('n', 'qq', ':q<CR>', opts)
 -- INSERT MODE MAPPING --
 keymap('i', '<C-s>', '<Esc>:w<CR>', opts)
 keymap('n', '<C-s>', ':w<CR>', opts)
+keymap('v', '<C-s>', ':w<CR>', opts)
 
 keymap('n', '<C-j>', '20j', opts)
 keymap('n', '<C-k>', '20k', opts)

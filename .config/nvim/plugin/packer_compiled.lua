@@ -97,7 +97,7 @@ _G.packer_plugins = {
   ["cmp-vsnip"] = {
     loaded = true,
     path = "/home/robert/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrs7th/cmp-vsnip"
+    url = "https://github.com/hrsh7th/cmp-vsnip"
   },
   ["copilot.vim"] = {
     loaded = true,
@@ -177,7 +177,7 @@ _G.packer_plugins = {
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/robert/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrs7th/vim-vsnip"
+    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 

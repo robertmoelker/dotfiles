@@ -33,8 +33,8 @@ return packer.startup(function()
   use 'hrsh7th/nvim-cmp'
   
   -- Snippet plugins
-  use 'hrs7th/cmp-vsnip'
-  use 'hrs7th/vim-vsnip'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
 
    -- Formatting & linters
   use 'jose-elias-alvarez/null-ls.nvim'

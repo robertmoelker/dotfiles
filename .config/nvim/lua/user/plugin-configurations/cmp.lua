@@ -4,7 +4,7 @@ if not status_ok then
   return
 end
 
-local status_ok, cmp_autopairs = pcall(require, 'cmp_autopairs')
+local status_ok, cmp_autopairs = pcall(require, 'nvim-autopairs.completion.cmp')
 if not status_ok then
   vim.cmd('echoerr "cmp_autopairs.lua not found"')
   return
@@ -31,7 +31,7 @@ cmp.setup({
   }),
 })
 -- Make sure the autopair will be triggered after the completion
-cmp.event.on(
+cmp.event:on(
   'confirm_done', 
   cmp_autopairs.on_confirm_done(
     {  

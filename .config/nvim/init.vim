@@ -182,6 +182,19 @@ inoremap <C-k>  20k
 " Open terminal in the current directory
 nnoremap <leader>t <cmd>TermExec cmd="cd %:p:h" direction=float<cr>
 
+" Be able to easy go through buffer files
+nnoremap <A-l> :bnext<CR>
+nnoremap <A-h> :bprevious<CR>
+
+" VISUAL MODE CONFIGURATIONS
+" Be able to indent and remain the indent to be selected
+vnoremap < <gv
+vnoremap > >gv
+
+" This keymap makes sure so that the selected value while yanking remains the
+" after an overwrite of the selected value
+vnoremap p "_dP
+
 " If no arguments are given by nvim, open the tree by default
 autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 autocmd VimEnter * if !argc() | execute 'NvimTreeToggle' | endif

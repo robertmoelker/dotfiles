@@ -29,6 +29,8 @@ keymap('n', '<leader>g', ':Telescope live_grep<CR>', opts)
 -- Toggleterm
 keymap('n', '<leader>t', ':TermExec cmd="cd %:p:h && cd ./$(git rev-parse --show-cdup)" direction=float<CR>', opts)
 
+keymap('n', '<leader>.', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+
 -- Easy way to go through buffers
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)

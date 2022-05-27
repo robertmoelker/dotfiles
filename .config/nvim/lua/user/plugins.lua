@@ -23,6 +23,7 @@ return packer.startup(function()
   use 'windwp/nvim-autopairs'
   use 'kyazdani42/nvim-tree.lua'
   use 'tpope/vim-commentary'
+  use 'folke/which-key.nvim'
 
   -- Autocomplete plugins
   use 'neovim/nvim-lspconfig'

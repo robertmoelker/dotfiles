@@ -17,3 +17,5 @@ o.encoding = 'utf-8'
 o.fileencoding = 'utf-8'
 o.termguicolors = true
 
+-- Overwrite the shiftwidth & tab for PHP files
+vim.cmd('autocmd FileType php setlocal shiftwidth=4 tabstop=4')

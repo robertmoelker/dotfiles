@@ -12,9 +12,10 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ','
 
 -- Modes that can be used while mapping
---    normal = 'n'
---    visual = 'v'
---    insert = 'i'
+--    normal       = 'n'
+--    visual       = 'v'
+--    insert       = 'i'
+--    visual_block = 'x'
 
 -- NORMAL MODE MAPPING --
 -- NvimTree keys
@@ -26,7 +27,7 @@ keymap('n', '<leader>f', ':Telescope find_files<CR>', opts)
 keymap('n', '<leader>g', ':Telescope live_grep<CR>', opts)
 
 -- Toggleterm
-keymap('n', '<leader>t', ':TermExec cmd="cd %:p:h" direction=float<CR>', opts)
+keymap('n', '<leader>t', ':TermExec cmd="cd %:p:h && cd ./$(git rev-parse --show-cdup)" direction=float<CR>', opts)
 
 -- Easy way to go through buffers
 keymap('n', '<C-h>', '<C-w>h', opts)
@@ -53,3 +54,7 @@ keymap('i', '<C-k>', '20k', opts)
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
 keymap('v', 'p', '"_dP', opts)
+
+-- VISUAL BLOCK MAPPING --
+keymap("x", "<A-j>", ":move '>+<CR>gv-gv", opts)
+keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)

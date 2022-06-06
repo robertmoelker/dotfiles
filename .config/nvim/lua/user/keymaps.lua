@@ -1,15 +1,15 @@
 local opts = {
   noremap = true,
-  silent = true,
+  silent  = true,
 }
 
 -- Shorten name to define the keymaps
 local keymap = vim.api.nvim_set_keymap
 
 -- Define the leader key
-keymap('', ',', '<Nop>', opts)
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+keymap('n', '<SPACE>', '<Nop>', opts)
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Modes that can be used while mapping
 --    normal       = 'n'
@@ -19,17 +19,33 @@ vim.g.maplocalleader = ','
 
 -- NORMAL MODE MAPPING --
 -- NvimTree keys
-keymap('n', '<C-n>', ':NvimTreeToggle<CR>', opts)
-keymap('n', '<C-d>', ':NvimTreeFindFile<CR>', opts)
+keymap('n', '<leader>n', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>d', ':NvimTreeFindFile<CR>', opts)
 
 -- Telescope keys
-keymap('n', '<leader>f', ':Telescope find_files<CR>', opts)
-keymap('n', '<leader>g', ':Telescope live_grep<CR>', opts)
+keymap('n', '<leader>f', ':Telescope find_files<CR>', {
+  noremap = opts.noremap,
+  silent  = opts.silent,
+  desc    = 'Find file'
+})
+keymap('n', '<leader>g', ':Telescope live_grep<CR>', {
+  noremap = opts.noremap,
+  silent  = opts.silent,
+  desc    = 'Search for string'
+})
 
 -- Toggleterm
-keymap('n', '<leader>t', ':TermExec cmd="cd %:p:h && cd ./$(git rev-parse --show-cdup)" direction=float<CR>', opts)
+keymap('n', '<leader>t', ':TermExec cmd="cd %:p:h && cd ./$(git rev-parse --show-cdup)" direction=float<CR>', {
+  noremap = opts.noremap,
+  silent  = opts.silent,
+  desc    = 'Open terminal'
+})
 
-keymap('n', '<leader>.', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+keymap('n', '<leader>i', '<cmd>lua vim.lsp.buf.hover()<CR>', {
+  noremap = opts.noremap,
+  silent  = opts.silent,
+  desc    = 'Show LSP info'
+})
 
 -- Easy way to go through buffers
 keymap('n', '<C-h>', '<C-w>h', opts)
@@ -37,7 +53,11 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 keymap('n', '<A-l>', ':bnext<CR>', opts)
 keymap('n', '<A-h>', ':bprevious<CR>', opts)
 
-keymap('n', '<C-f>', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 2000)<CR>', opts)
+keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.formatting_sync(nil, 2000)<CR>', {
+  noremap = opts.noremap,
+  silent  = opts.silent,
+  desc    = 'Formatting'
+})
 
 -- Skip the need to press :q to quit
 keymap('n', 'qq', ':q<CR>', opts)

@@ -18,7 +18,6 @@ return packer.startup(function()
   use 'nvim-lualine/lualine.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'EdenEast/nightfox.nvim'
-  use 'github/copilot.vim'
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-autopairs'
   use 'kyazdani42/nvim-tree.lua'
@@ -32,6 +31,7 @@ return packer.startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind.nvim'
   
   -- Snippet plugins
   use 'hrsh7th/cmp-vsnip'
@@ -50,4 +50,20 @@ return packer.startup(function()
     tag = "v2.*", 
     requires = 'kyazdani42/nvim-web-devicons'
   }
+
+  -- -- Github copilot lua edition
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   event = {"VimEnter"},
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require("copilot").setup()
+  --     end, 100)
+  --   end,
+  -- }  
+
+  -- use {
+  --   "zbirenbaum/copilot-cmp",
+  --   after = { "copilot.lua", "nvim-cmp" },
+  -- }
 end)

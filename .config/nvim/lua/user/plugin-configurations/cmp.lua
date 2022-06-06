@@ -10,6 +10,12 @@ if not status_ok then
   return
 end
 
+local status_ok, lspkind = pcall(require, 'lspkind')
+if not status_ok then
+  vim.cmd('echoerr "lspkind not found"')
+  return
+end
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -18,6 +24,7 @@ cmp.setup({
   },
   sources = {
     { name = 'nvim_lsp'},
+    { name = 'copilot'},
     { name = 'vsnip'},
     { name = 'buffer'}
   },
@@ -29,6 +36,12 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+      maxwidth = 50
+    })
+  }
 })
 -- Make sure the autopair will be triggered after the completion
 cmp.event:on(

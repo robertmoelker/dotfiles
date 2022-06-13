@@ -47,6 +47,9 @@ local sources = {
 			"{extends: default, rules: {document-start: disable}}",
 		},
 	}),
+
+  -- jsonlint to check json files based on validation
+  null_ls.builtins.diagnostics.jsonlint
 }
 
 null_ls.setup({ sources = sources })

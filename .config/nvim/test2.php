@@ -1,6 +1,0 @@
-<?php
-
-function testASDF($attr)
-{
-
-}

@@ -15,9 +15,13 @@ return packer.startup(function()
   use 'wbthomason/packer.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use 'zane-/cder.nvim' -- used w/ telescope
   use 'nvim-lualine/lualine.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'EdenEast/nightfox.nvim'
+  use 'Mofiqul/vscode.nvim'
+
+
   use 'akinsho/toggleterm.nvim'
   use 'windwp/nvim-autopairs'
   use 'kyazdani42/nvim-tree.lua'

@@ -13,10 +13,10 @@ o.si = true
 -- o.nowrap = true
 o.ignorecase = true
 o.showcmd = true
-o.encoding = 'utf-8'
-o.fileencoding = 'utf-8'
+o.encoding = "utf-8"
+o.fileencoding = "utf-8"
 o.termguicolors = true
-o.clipboard = 'unnamedplus'
+o.clipboard = "unnamedplus"
 
 -- Overwrite the shiftwidth & tab for PHP files
-vim.cmd('autocmd FileType php setlocal shiftwidth=4 tabstop=4')
+vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")

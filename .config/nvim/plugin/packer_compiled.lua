@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/robert/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["cder.nvim"] = {
+    loaded = true,
+    path = "/home/robert/.local/share/nvim/site/pack/packer/start/cder.nvim",
+    url = "https://github.com/zane-/cder.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/robert/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -178,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/robert/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/robert/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,

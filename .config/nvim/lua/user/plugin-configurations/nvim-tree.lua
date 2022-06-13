@@ -1,10 +1,10 @@
-require('nvim-tree').setup({
-  git = {
-    ignore = false
-  },
-  update_focused_file = {
-     enable = true,
-  }
+require("nvim-tree").setup({
+	git = {
+		ignore = false,
+	},
+	update_focused_file = {
+		enable = true,
+	},
 })
 
 -- If no arguments are given by nvim, open the tree by default

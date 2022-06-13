@@ -47,6 +47,12 @@ keymap("n", "<leader>i", "<cmd>lua vim.lsp.buf.hover()<CR>", {
 	desc = "Show LSP info",
 })
 
+keymap("n", "<leader>p", ":Telescope cder<CR>", {
+	noremap = opts.noremap,
+	silent = opts.silent,
+	desc = "Find project",
+})
+
 -- Easy way to go through buffers
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)

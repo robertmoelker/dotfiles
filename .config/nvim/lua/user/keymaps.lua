@@ -42,7 +42,7 @@ keymap("n", "<leader>tt", ':TermExec cmd="cd %:p:h && cd ./$(git rev-parse --sho
 })
 
 -- keymap("n", "<leader>tv", ':ToggleTerm size=40 dir=git_dir direction=vertical', {
-keymap("n", "<leader>tv", ':TermExec size=70 cmd="cd %:p:h && $(git rev-parse --show-cdup)" direction=vertical<CR>', {
+keymap("n", "<leader>tv", ':TermExec size=90 cmd="cd %:p:h && $(git rev-parse --show-cdup)" direction=vertical<CR>', {
   noremap = opts.noremap,
   silent = opts.silent,
   desc = "Open terminal vertical",

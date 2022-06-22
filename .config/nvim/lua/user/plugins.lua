@@ -51,21 +51,4 @@ return packer.startup(function()
 		tag = "v2.*",
 		requires = "kyazdani42/nvim-web-devicons",
 	})
-
-	use("github/copilot.vim")
-	-- -- Github copilot lua edition
-	use({
-		"zbirenbaum/copilot.lua",
-		event = "InsertEnter",
-		config = function()
-			vim.schedule(function()
-				require("copilot").setup()
-			end)
-		end,
-	})
-
-	use({
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua", "nvim-cmp" },
-	})
 end)

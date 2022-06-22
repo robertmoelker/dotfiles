@@ -49,6 +49,7 @@ keymap("n", "<leader>tv", ':TermExec size=90 cmd="cd %:p:h && $(git rev-parse --
 })
 
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
+keymap("t", "<C-s>", "<C-\\><C-n>", opts)
 keymap("n", "<A-Left>", ":vertical resize +30<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize -30<CR>", opts)
 

@@ -18,7 +18,8 @@ return packer.startup(function()
 	use("zane-/cder.nvim") -- used w/ telescope
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
-	use("EdenEast/nightfox.nvim")
+	-- use("EdenEast/nightfox.nvim")
+  use("marko-cerovac/material.nvim")
 
 	use("akinsho/toggleterm.nvim")
 	use("windwp/nvim-autopairs")

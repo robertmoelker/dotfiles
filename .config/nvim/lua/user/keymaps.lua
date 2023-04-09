@@ -71,7 +71,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<A-l>", ":bnext<CR>", opts)
 keymap("n", "<A-h>", ":bprevious<CR>", opts)
 
-keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.formatting_sync(nil, 2000)<CR>", {
+keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format()<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
 	desc = "Formatting",

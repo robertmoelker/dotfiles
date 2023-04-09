@@ -13,6 +13,8 @@
 -- dawnfox
 
 -- vim.cmd("colorscheme nightfox")
-vim.cmd("colorscheme duskfox")
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme material")
+vim.g.material_style="palenight"
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

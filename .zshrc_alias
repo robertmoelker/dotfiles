@@ -32,8 +32,8 @@ alias drestart="docker-compose down && docker-compose up -d"
 alias dockerrestart="drestart"
 alias nov="cd ~/Sites/novti/"
 
-alias ls='colorls -lA --sd'
-alias ll='ls -al'
+alias ll='colorls -lA --sd'
+# alias ll='ls -al'
 alias la='ls -al'
 
 # Helpfull for the dotfiles repository to work with

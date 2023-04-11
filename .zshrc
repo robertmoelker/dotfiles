@@ -135,10 +135,6 @@ group_lazy_load() {
 }
 
 
-# Inject the custom aliasses
-if [ -f ~/.zshrc_alias ]; then
-	. ~/.zshrc_alias
-fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -149,6 +145,8 @@ if [ -f '/home/robert/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/robert/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/robert/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
 
 # export NVM_DIR=~/.nvm
 # group_lazy_load $HOME/.nvm/nvm.sh nvm node npm yarn eslint_d intelephense eslint
@@ -158,10 +156,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Add composer to the PATH
-export PATH="$PATH:$HOME/.config/composer/vendor/bin:/mnt/c/Users/rober/AppData/Local/Programs/Microsoft VS Code/bin:$(yarn global bin)"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin:/mnt/c/Users/rober/AppData/Local/Programs/Microsoft VS Code/bin:$(yarn global bin)/$GOPATH/bin:$GOROOT/bin"
 
 source $ZSH/oh-my-zsh.sh
 
-alias ll="ls -al"
-
 cd ~/Sites
+
+# Inject the custom aliasses
+if [ -f ~/.zshrc_alias ]; then
+	. ~/.zshrc_alias
+fi

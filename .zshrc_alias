@@ -1,7 +1,7 @@
 # GIT COMMANDS & ALIASES
 
-hw() { git commit -m ":hammer_and_wrench: Refactor: $1"; }
-sp() { git commit -m ":sparkles: Feature: $1"; }
+hw() { git commit -m "refactor: $1"; }
+sp() { git commit -m "feat: $1"; }
 
 #notify-send() { /mnt/c/Users/rober/Documents/Work/1.x-windows-wsl-notify-send/wsl-notify-send.exe --category "$WSL_DISTRO_NAME" "$@"; }
 timezsh() {
@@ -27,10 +27,9 @@ alias startdbprodvv="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy
 
 
 alias nvimconf="cd ~/.config/nvim/ && nvim"
-alias nvimrc="nvim ~/.config/nvim/init.vim"
-alias drestart="docker-compose down && docker-compose up -d"
-alias dockerrestart="drestart"
+# alias nvimrc="nvim ~/.config/nvim/init.vim"
 alias nov="cd ~/Sites/novti/"
+alias win="cd /mnt/c/Users/robert/Downloads"
 
 alias ll='colorls -lA --sd'
 # alias ll='ls -al'

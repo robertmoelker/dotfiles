@@ -160,9 +160,12 @@ export PATH="$PATH:$HOME/.config/composer/vendor/bin:/mnt/c/Users/rober/AppData/
 
 source $ZSH/oh-my-zsh.sh
 
-cd ~/Sites
+# cd ~/Sites
 
 # Inject the custom aliasses
 if [ -f ~/.zshrc_alias ]; then
 	. ~/.zshrc_alias
 fi
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

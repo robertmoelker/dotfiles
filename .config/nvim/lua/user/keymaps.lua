@@ -68,8 +68,8 @@ keymap("n", "<leader>p", ":Telescope cder<CR>", {
 -- Easy way to go through buffers
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<A-l>", ":bnext<CR>", opts)
-keymap("n", "<A-h>", ":bprevious<CR>", opts)
+keymap("n", "<C-j>", ":bnext<CR>", opts)
+keymap("n", "<C-k>", ":bprevious<CR>", opts)
 
 keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format()<CR>", {
 	noremap = opts.noremap,
@@ -85,10 +85,10 @@ keymap("i", "<C-s>", "<Esc>:w<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("v", "<C-s>", ":w<CR>", opts)
 
-keymap("n", "<C-j>", "20j", opts)
-keymap("n", "<C-k>", "20k", opts)
-keymap("i", "<C-j>", "20j", opts)
-keymap("i", "<C-k>", "20k", opts)
+-- keymap("n", "<C-j>", "20j", opts)
+-- keymap("n", "<C-k>", "20k", opts)
+-- keymap("i", "<C-j>", "20j", opts)
+-- keymap("i", "<C-k>", "20k", opts)
 
 -- VISUAL MODE MAPPING --
 keymap("v", "<", "<gv", opts)

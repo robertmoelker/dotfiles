@@ -10,13 +10,13 @@ nvim_tree.setup({
 	update_focused_file = {
 		enable = true,
 	},
-	view = {
-		mappings = {
-			list = {
-				{ key = "<A-v>", cb = tree_cb("vsplit") },
-			},
-		},
-	},
+	-- view = {
+	-- 	mappings = {
+	-- 		list = {
+	-- 			{ key = "<A-v>", cb = tree_cb("vsplit") },
+	-- 		},
+	-- 	},
+	-- },
 })
 
 -- If no arguments are given by nvim, open the tree by default

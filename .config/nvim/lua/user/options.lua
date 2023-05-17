@@ -20,8 +20,8 @@ o.fileencoding = "utf-8"
 o.termguicolors = true
 o.clipboard = "unnamedplus"
 
--- vim.cmd("set t_ZH=^[[3m")
--- vim.cmd("set t_ZR=^[[23m")
+-- Disable the default mouse
+o.mouse = 
 
 -- Overwrite the shiftwidth & tab for PHP files
 vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")

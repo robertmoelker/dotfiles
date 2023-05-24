@@ -18,21 +18,21 @@ return packer.startup(function()
 	use("zane-/cder.nvim") -- used w/ telescope
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
-  -- use("marko-cerovac/material.nvim")
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
+	use({ "rose-pine/neovim", as = "rose-pine" })
 
-	use("akinsho/toggleterm.nvim")
+	-- use("akinsho/toggleterm.nvim")
+	use("tpope/vim-fugitive")
 	use("windwp/nvim-autopairs")
 	use("kyazdani42/nvim-tree.lua")
 	use("tpope/vim-commentary")
 	use("folke/which-key.nvim")
 
 	-- Autocomplete plugins
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  }
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
+	})
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")

@@ -8,6 +8,7 @@ local keymap = vim.api.nvim_set_keymap
 
 -- Define the leader key
 keymap("n", "<SPACE>", "<Nop>", opts)
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -32,20 +33,6 @@ keymap("n", "<leader>g", ":Telescope live_grep<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
 	desc = "Search for string",
-})
-
--- Toggleterm
-keymap("n", "<leader>tt", ':TermExec cmd="cd %:p:h && cd ./$(git rev-parse --show-cdup)" direction=float<CR>', {
-	noremap = opts.noremap,
-	silent = opts.silent,
-	desc = "Open terminal",
-})
-
--- keymap("n", "<leader>tv", ':ToggleTerm size=40 dir=git_dir direction=vertical', {
-keymap("n", "<leader>tv", ':TermExec size=90 cmd="cd %:p:h && $(git rev-parse --show-cdup)" direction=vertical<CR>', {
-  noremap = opts.noremap,
-  silent = opts.silent,
-  desc = "Open terminal vertical",
 })
 
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
@@ -84,11 +71,6 @@ keymap("n", "qq", ":q<CR>", opts)
 keymap("i", "<C-s>", "<Esc>:w<CR>", opts)
 keymap("n", "<C-s>", ":w<CR>", opts)
 keymap("v", "<C-s>", ":w<CR>", opts)
-
--- keymap("n", "<C-j>", "20j", opts)
--- keymap("n", "<C-k>", "20k", opts)
--- keymap("i", "<C-j>", "20j", opts)
--- keymap("i", "<C-k>", "20k", opts)
 
 -- VISUAL MODE MAPPING --
 keymap("v", "<", "<gv", opts)

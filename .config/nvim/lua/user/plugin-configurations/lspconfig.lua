@@ -20,6 +20,13 @@ require("lspconfig")["intelephense"].setup({
 	end,
 })
 
+require("lspconfig")["volar"].setup({
+  capabilities = capabilities,
+  on_attach = function(client)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {

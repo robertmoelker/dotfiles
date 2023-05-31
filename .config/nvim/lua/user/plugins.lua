@@ -20,7 +20,6 @@ return packer.startup(function()
 	use("kyazdani42/nvim-web-devicons")
 	use({ "rose-pine/neovim", as = "rose-pine" })
 
-	-- use("akinsho/toggleterm.nvim")
 	use("tpope/vim-fugitive")
 	use("windwp/nvim-autopairs")
 	use("kyazdani42/nvim-tree.lua")
@@ -38,7 +37,6 @@ return packer.startup(function()
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/nvim-cmp")
-	-- use("onsails/lspkind.nvim")
 
 	-- Snippet plugins
 	use("hrsh7th/cmp-vsnip")

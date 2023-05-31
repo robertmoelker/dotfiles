@@ -37,8 +37,6 @@ keymap("n", "<leader>g", ":Telescope live_grep<CR>", {
 
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
 keymap("t", "<C-s>", "<C-\\><C-n>", opts)
-keymap("n", "<A-Left>", ":vertical resize +30<CR>", opts)
-keymap("n", "<A-Right>", ":vertical resize -30<CR>", opts)
 
 keymap("n", "<leader>i", "<cmd>lua vim.lsp.buf.hover()<CR>", {
 	noremap = opts.noremap,
@@ -55,8 +53,24 @@ keymap("n", "<leader>p", ":Telescope cder<CR>", {
 -- Easy way to go through buffers
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-j>", ":bnext<CR>", opts)
-keymap("n", "<C-k>", ":bprevious<CR>", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+
+keymap("n", "<leader>bn", ":bnext<CR>", {
+	noremap = opts.noremap,
+	silent = opts.silent,
+	desc = "Buffer next",
+})
+keymap("n", "<leader>bp", ":bprevious<CR>", {
+	noremap = opts.noremap,
+	silent = opts.silent,
+	desc = "Buffer previous",
+})
+keymap("n", "<leader>bd", ":bdelete<CR>", {
+	noremap = opts.noremap,
+	silent = opts.silent,
+	desc = "Buffer previous",
+})
 
 keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format()<CR>", {
 	noremap = opts.noremap,

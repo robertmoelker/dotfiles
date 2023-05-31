@@ -25,3 +25,6 @@ o.mouse =
 
 -- Overwrite the shiftwidth & tab for PHP files
 vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")
+
+-- Set the filetype for EJS files for highlighting
+vim.cmd("autocmd BufRead,BufNewFile *.ejs set filetype=html.js")

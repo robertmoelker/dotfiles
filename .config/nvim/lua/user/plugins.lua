@@ -11,7 +11,7 @@ vim.cmd([[
   augroup end
 ]])
 
-return packer.startup(function()
+return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim")
@@ -21,6 +21,7 @@ return packer.startup(function()
 	use({ "rose-pine/neovim", as = "rose-pine" })
 
 	use("tpope/vim-fugitive")
+	use("tpope/vim-surround")
 	use("windwp/nvim-autopairs")
 	use("kyazdani42/nvim-tree.lua")
 	use("tpope/vim-commentary")

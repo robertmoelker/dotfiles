@@ -71,8 +71,7 @@ keymap("n", "<leader>bd", ":bdelete<CR>", {
 	silent = opts.silent,
 	desc = "Buffer previous",
 })
-
-keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format()<CR>", {
+keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
 	desc = "Formatting",

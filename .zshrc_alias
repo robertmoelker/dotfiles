@@ -26,13 +26,12 @@ alias startdbprodtdh="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_prox
 alias startdbprodvv="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-vier-voeters:europe-west4:viervoeters-mysql-prod=tcp:3316 -credential_file=fs-viervoeters.json"
 
 
-alias nvimconf="cd ~/.config/nvim/ && nvim"
-# alias nvimrc="nvim ~/.config/nvim/init.vim"
+alias nvimconf="nvim ~/.config/nvim/init.lua" 
+alias glazeconf="nvim /mnt/c/Users/rober/.glaze-wm/config.yaml" 
 alias nov="cd ~/Sites/novti/"
 alias win="cd /mnt/c/Users/robert/Downloads"
 
 alias ll='colorls -lA --sd'
-# alias ll='ls -al'
 alias la='ls -al'
 
 # Helpfull for the dotfiles repository to work with

@@ -27,6 +27,20 @@ require("lspconfig")["volar"].setup({
   end,
 })
 
+require("lspconfig")["lua_ls"].setup({
+  capabilities = capabilities,
+  on_attach = function(client)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+
+require("lspconfig")["glint"].setup({
+  capabilities = capabilities,
+  on_attach = function(client)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
 vim.api.nvim_create_autocmd('LspAttach', {

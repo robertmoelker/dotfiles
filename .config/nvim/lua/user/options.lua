@@ -28,3 +28,4 @@ vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")
 
 -- Set the filetype for EJS files for highlighting
 vim.cmd("autocmd BufRead,BufNewFile *.ejs set filetype=html.js")
+vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html.js")

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+read -p "You're about to remove all the local git branches that are merged into (dev), are you sure? (Y/n) " -n 1 -r
+
+echo    # (optional) move to a new line
+
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+   echo 'Excecuting cleanup git branches!'
+
+   git branch --merged dev | grep -v "^\* dev" | xargs -n 1 -r git branch -d
+else 
+  echo 'Skipping the cleanup!'
+fi

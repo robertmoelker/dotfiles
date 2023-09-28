@@ -1,5 +1,4 @@
 local nvim_tree = require("nvim-tree")
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
 nvim_tree.setup({
 	respect_buf_cwd = true,
@@ -10,13 +9,9 @@ nvim_tree.setup({
 	update_focused_file = {
 		enable = true,
 	},
-	-- view = {
-	-- 	mappings = {
-	-- 		list = {
-	-- 			{ key = "<A-v>", cb = tree_cb("vsplit") },
-	-- 		},
-	-- 	},
-	-- },
+  view = {
+    width = 50,
+  }
 })
 
 -- If no arguments are given by nvim, open the tree by default

@@ -50,6 +50,8 @@ local sources = {
 
 	-- jsonlint to check json files based on validation
 	null_ls.builtins.diagnostics.jsonlint,
+
+  null_ls.builtins.diagnostics.stylelint
 }
 
 null_ls.setup({ sources = sources })

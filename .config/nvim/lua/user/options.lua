@@ -19,6 +19,9 @@ o.encoding = "utf-8"
 o.fileencoding = "utf-8"
 o.termguicolors = true
 o.clipboard = "unnamedplus"
+o.title = true
+o.titlestring = "%F (%t)"
+
 
 -- Disable the default mouse
 o.mouse = 

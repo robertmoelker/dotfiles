@@ -45,6 +45,7 @@ return packer.startup(function(use)
 
 	-- Formatting & linters
 	use("jose-elias-alvarez/null-ls.nvim")
+  use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",

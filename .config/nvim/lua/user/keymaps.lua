@@ -24,15 +24,20 @@ keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>d", ":NvimTreeFindFile<CR>", opts)
 
 -- Telescope keys
-keymap("n", "<leader>f", ":Telescope find_files<CR>", {
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
 	desc = "Find file",
 })
-keymap("n", "<leader>g", ":Telescope live_grep<CR>", {
+keymap("n", "<leader>fg", ":Telescope live_grep<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
 	desc = "Search for string",
+})
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", {
+  noremap = opts.noremap,
+  silent = opts.silent,
+  desc = "Find buffer",
 })
 
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
@@ -69,7 +74,7 @@ keymap("n", "<leader>bp", ":bprevious<CR>", {
 keymap("n", "<leader>bd", ":bdelete<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
-	desc = "Buffer previous",
+	desc = "Buffer delete",
 })
 keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", {
 	noremap = opts.noremap,

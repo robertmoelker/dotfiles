@@ -39,6 +39,12 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", {
   silent = opts.silent,
   desc = "Find buffer",
 })
+keymap("n", "<leader>ft", ":TodoTelescope<CR>", {
+  noremap = opts.noremap,
+  silent = opts.silent,
+  desc = "Find todos/comments",
+})
+
 
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
 keymap("t", "<C-s>", "<C-\\><C-n>", opts)

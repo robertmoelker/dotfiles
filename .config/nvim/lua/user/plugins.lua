@@ -15,7 +15,8 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim")
-	use("zane-/cder.nvim") -- used w/ telescope
+	use("zane-/cder.nvim") -- used with telescope
+  use("folke/todo-comments.nvim") -- used with telescope
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use({ "rose-pine/neovim", as = "rose-pine" })

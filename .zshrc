@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/robert/.yarn/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/rm/.yarn/bin:$PATH:/home/rm/.local/scripts
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -79,7 +79,7 @@ TERM=xterm-256color
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions docker-compose tmux)
+plugins=(git zsh-autosuggestions tmux)
 
 #source $ZSH/oh-my-zsh.sh
 
@@ -110,7 +110,7 @@ plugins=(git zsh-autosuggestions docker-compose tmux)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# Setup lazy loading to speed up oh-my-zsh ( custom made by Robert )
+# Setup lazy loading to speed up oh-my-zsh ( custom made by rm )
 lazy_load() {
   # $1.split(' ') using the s flag. In bash, this can be simply ($1) #http://unix.stackexchange.com/questions/28854/list-elements-with-spaces-in-zsh
     # Single line won't work: local names=("${(@s: :)${1}}"). Due to http://stackoverflow.com/questions/14917501/local-arrays-in-zsh   (zsh 5.0.8 (x86_64-apple-darwin15.0))
@@ -139,28 +139,20 @@ group_lazy_load() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/robert/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/robert/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/robert/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/robert/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
-
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 
 # export NVM_DIR=~/.nvm
 # group_lazy_load $HOME/.nvm/nvm.sh nvm node npm yarn eslint_d intelephense eslint
 # unset -f group_lazy_load
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Add composer to the PATH
-export PATH="$PATH:$HOME/.config/composer/vendor/bin:/mnt/c/Users/rober/AppData/Local/Programs/Microsoft VS Code/bin:$(yarn global bin)/$GOPATH/bin:$GOROOT/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin:/mnt/c/Users/rober/AppData/Local/Programs/Microsoft VS Code/bin:/$GOPATH/bin:$GOROOT/bin"
 
 source $ZSH/oh-my-zsh.sh
-
-# cd ~/Sites
 
 # Inject the custom aliasses
 if [ -f ~/.zshrc_alias ]; then
@@ -169,3 +161,7 @@ fi
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# fnm
+export PATH="/home/rm/.local/share/fnm:$PATH"
+eval "$(fnm env --use-on-cd)"

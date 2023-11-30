@@ -1,14 +1,7 @@
-# GIT COMMANDS & ALIASES
-
-hw() { git commit -m "refactor: $1"; }
-sp() { git commit -m "feat: $1"; }
-
-#notify-send() { /mnt/c/Users/rober/Documents/Work/1.x-windows-wsl-notify-send/wsl-notify-send.exe --category "$WSL_DISTRO_NAME" "$@"; }
 timezsh() {
   shell=${1-$SHELL}
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
-
 
 # DATABASE ALIAS COMMANDS
 alias startdb="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=growingminds-sandbox:europe-west4:gm-sandbox-mysql-dev=tcp:3307 -credential_file=growingminds-sandbox-9574e28c3c4f.json"
@@ -25,14 +18,19 @@ alias startdbprodnof="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_prox
 alias startdbprodtdh="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-terredeshommes:europe-west4:terredeshommes-mysql-prod=tcp:3315 -credential_file=fs-terredeshommes.json"
 alias startdbprodvv="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-vier-voeters:europe-west4:viervoeters-mysql-prod=tcp:3316 -credential_file=fs-viervoeters.json"
 
-
 alias nvimconf="nvim ~/.config/nvim/init.lua" 
 alias glazeconf="nvim /mnt/c/Users/rober/.glaze-wm/config.yaml" 
 alias nov="cd ~/Sites/novti/"
-alias win="cd /mnt/c/Users/robert/Downloads"
+alias win="cd /mnt/c/Users/rober/Downloads"
 
 alias ll='colorls -lA --sd'
 alias la='ls -al'
 
 # Helpfull for the dotfiles repository to work with
 alias config='/usr/bin/git --git-dir=/home/robert/.cfg/ --work-tree=/home/robert'
+
+# Lets make sure to use the RUST version which is way faster
+alias nvm="fnm"
+
+# Setup easier `sail` command for Laravel projects
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'

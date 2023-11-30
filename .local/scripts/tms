@@ -5,17 +5,19 @@ if [[ $# -eq 1 ]]; then
 else
     selected=$(find \
       ~/Sites \
+      ~/Sites/marketingcloud \
       ~/Sites/novti  \
       ~/Sites/novti/admin  \
       ~/Sites/novti/bundles  \
         -mindepth 1 \
         -maxdepth 2 \
         -type d | \
-        fzf \
+        fzf-tmux \
       )
 fi
 
 if [[ -z $selected ]]; then
+    print 'Nothing select...'
     exit 0
 fi
 

@@ -34,6 +34,11 @@ keymap("n", "<leader>fg", ":Telescope live_grep<CR>", {
 	silent = opts.silent,
 	desc = "Search for string",
 })
+keymap("n", "<leader>fn", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {
+	noremap = opts.noremap,
+	silent = opts.silent,
+	desc = "Open file browser",
+})
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", {
   noremap = opts.noremap,
   silent = opts.silent,
@@ -60,6 +65,10 @@ keymap("n", "<leader>p", ":Telescope cder<CR>", {
 	silent = opts.silent,
 	desc = "Find project",
 })
+
+-- Scroll remaps (centers cursor)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- Easy way to go through buffers
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -89,7 +98,7 @@ keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 })
 
 -- Skip the need to press :q to quit
-keymap("n", "qq", ":q<CR>", opts)
+keymap("n", "qq", ":q!<CR>", opts)
 
 -- INSERT MODE MAPPING --
 keymap("i", "<C-s>", "<Esc>:w<CR>", opts)
@@ -104,3 +113,4 @@ keymap("v", "p", '"_dP', opts)
 -- VISUAL BLOCK MAPPING --
 keymap("x", "<A-j>", ":move '>+<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+

@@ -31,6 +31,9 @@ require("nvim-treesitter.configs").setup({
 	indent = {
 		enable = false,
 	},
+  autotag = {
+    enable = true
+  }
 })
 
 require('ts_context_commentstring').setup {}

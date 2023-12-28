@@ -22,7 +22,6 @@ o.clipboard = "unnamedplus"
 o.title = true
 o.titlestring = "%F (%t)"
 
-
 -- Disable the default mouse
 o.mouse = 
 

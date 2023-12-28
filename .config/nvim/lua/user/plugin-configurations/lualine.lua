@@ -26,6 +26,7 @@ require("lualine").setup({
 				icon = " LSP:",
 				color = { _fg = "#ffffff", gui = "bold" },
 			},
+			{ "filename" },
 		},
 	},
 })

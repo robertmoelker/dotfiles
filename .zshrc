@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/rm/.yarn/bin:$PATH:/home/rm/.local/scripts
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.yarn/bin:$PATH:$HOME/.local/scripts:$HOME/.local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -150,7 +150,7 @@ export GOPATH=$HOME/go
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Add composer to the PATH
-export PATH="$PATH:$HOME/.config/composer/vendor/bin:/mnt/c/Users/rober/AppData/Local/Programs/Microsoft VS Code/bin:/$GOPATH/bin:$GOROOT/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin:/$GOPATH/bin:$GOROOT/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -165,3 +165,13 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # fnm
 export PATH="/home/rm/.local/share/fnm:$PATH"
 eval "$(fnm env --use-on-cd)"
+
+# fnm
+export PATH="/home/rm/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi

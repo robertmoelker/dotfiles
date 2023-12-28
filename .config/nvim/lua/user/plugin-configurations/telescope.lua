@@ -13,21 +13,10 @@ require("telescope").setup({
 				["<leader>v"] = actions.select_vertical,
 			},
 		},
-	},
-	extensions = {
-		cder = {
-      prompt_title = 'Find projects',
-			dir_command = { "fd", "--type=d", "--max-depth=4", ".", os.getenv("HOME") .. "/Sites" },
-			entry_maker = function(line)
-				return {
-					value = line,
-					display = function(entry)
-						return " " .. line:gsub(os.getenv("HOME") .. "/Sites/", "~/"), { { { 1, 3 }, "Directory" } }
-					end,
-					ordinal = line,
-				}
-			end,
+		path_display = {
+			truncate = 3,
 		},
 	},
 })
-require("telescope").load_extension("cder")
+
+require("telescope").load_extension("file_browser")

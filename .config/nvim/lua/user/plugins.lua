@@ -27,7 +27,7 @@ return packer.startup(function(use)
 	use("tpope/vim-fugitive")
 	use("tpope/vim-surround")
 	use("windwp/nvim-autopairs")
-	-- use("kyazdani42/nvim-tree.lua")
+	use("nvim-tree/nvim-tree.lua")
 	use("tpope/vim-commentary")
 	use("folke/which-key.nvim")
 

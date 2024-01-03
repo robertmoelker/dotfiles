@@ -1,5 +1,9 @@
 local nvim_tree = require("nvim-tree")
 
+-- Disable default `netrw` plugin (pre-installed)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 nvim_tree.setup({
 	respect_buf_cwd = true,
   update_cwd = true,
@@ -15,7 +19,7 @@ nvim_tree.setup({
 })
 
 -- If no arguments are given by nvim, open the tree by default
-vim.cmd('autocmd VimEnter * if !argc() | execute "NvimTreeToggle" | endif')
+-- vim.cmd('autocmd VimEnter * if !argc() | execute "NvimTreeToggle" | endif')
 
 -- vim.api.nvim_create_autocmd("BufEnter", {
 -- 	nested = true,

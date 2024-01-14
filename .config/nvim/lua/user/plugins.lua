@@ -22,10 +22,10 @@ return packer.startup(function(use)
 	use("folke/todo-comments.nvim") -- used with telescope
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
-	use({ "rose-pine/neovim", as = "rose-pine" })
+  use("rebelot/kanagawa.nvim")
 
 	use("tpope/vim-fugitive")
-	use("tpope/vim-surround")
+  use("kylechui/nvim-surround")
 	use("windwp/nvim-autopairs")
 	use("nvim-tree/nvim-tree.lua")
 	use("tpope/vim-commentary")
@@ -59,13 +59,6 @@ return packer.startup(function(use)
     "windwp/nvim-ts-autotag",
     requires = {"nvim-treesitter"}
   })
-
-	-- Tabs in the top of the screen based on buffer
-	-- use({
-	-- 	"akinsho/bufferline.nvim",
-	-- 	-- tag = "v2.*",
-	-- 	requires = "kyazdani42/nvim-web-devicons",
-	-- })
 
 	use({
 		"ThePrimeagen/harpoon",

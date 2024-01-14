@@ -29,8 +29,12 @@ alias la='eza -l -a --icons'
 # Helpfull for the dotfiles repository to work with
 alias config='/usr/bin/git --git-dir=/home/rm/.cfg/ --work-tree=/home/rm'
 
-# Lets make sure to use the RUST version which is way faster
+# Let's make sure to use the RUST version which is way faster
 alias nvm="fnm"
+
+# Make it easier to open NVIM
+alias vi="nvim"
+alias vim="nvim"
 
 # Setup easier `sail` command for Laravel projects
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'

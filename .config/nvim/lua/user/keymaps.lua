@@ -21,7 +21,6 @@ vim.g.maplocalleader = " "
 -- NORMAL MODE MAPPING --
 -- NvimTree keys
 keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>d", ":NvimTreeFindFile<CR>", opts)
 
 -- Telescope keys
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", {

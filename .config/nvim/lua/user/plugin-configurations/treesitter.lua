@@ -37,3 +37,6 @@ require("nvim-treesitter.configs").setup({
 })
 
 require('ts_context_commentstring').setup {}
+
+-- Lets setup the js for the `ejs` files from FormIO.
+vim.treesitter.language.register('javascript', 'ejs')

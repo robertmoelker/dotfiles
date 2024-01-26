@@ -1,3 +1,6 @@
+# UNCOMMENT BELOW TO SEE THE DURATION OF THE SH
+#zmodload zsh/zprof
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -80,6 +83,7 @@ TERM=xterm-256color
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions tmux)
+# plugins=()
 
 #source $ZSH/oh-my-zsh.sh
 
@@ -110,44 +114,11 @@ plugins=(git zsh-autosuggestions tmux)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# Setup lazy loading to speed up oh-my-zsh ( custom made by rm )
-lazy_load() {
-  # $1.split(' ') using the s flag. In bash, this can be simply ($1) #http://unix.stackexchange.com/questions/28854/list-elements-with-spaces-in-zsh
-    # Single line won't work: local names=("${(@s: :)${1}}"). Due to http://stackoverflow.com/questions/14917501/local-arrays-in-zsh   (zsh 5.0.8 (x86_64-apple-darwin15.0))
-    local -a names
-    if [[ -n "$ZSH_VERSION" ]]; then
-        names=("${(@s: :)${1}}")
-    else
-        names=($1)
-    fi
-    unalias "${names[@]}"
-    . $2
-    shift 2
-    $*
-}
-group_lazy_load() {
-    local script
-    script=$1
-    shift 1
-    for cmd in "$@"; do
-        alias $cmd="lazy_load \"$*\" $script $cmd"
-    done
-}
-
-
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-
-# export NVM_DIR=~/.nvm
-# group_lazy_load $HOME/.nvm/nvm.sh nvm node npm yarn eslint_d intelephense eslint
-# unset -f group_lazy_load
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Add composer to the PATH
 export PATH="$PATH:$HOME/.config/composer/vendor/bin:/$GOPATH/bin:$GOROOT/bin"
@@ -166,12 +137,11 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/home/rm/.local/share/fnm:$PATH"
 eval "$(fnm env --use-on-cd)"
 
-# fnm
-export PATH="/home/rm/.local/share/fnm:$PATH"
-eval "`fnm env`"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+# UNCOMMENT BELOW TO SEE THE DURATION OF THE SH
+# zprof

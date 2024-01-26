@@ -38,3 +38,5 @@ alias vim="nvim"
 
 # Setup easier `sail` command for Laravel projects
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+
+alias t="toggl"

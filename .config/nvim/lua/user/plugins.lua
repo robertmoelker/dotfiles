@@ -22,10 +22,10 @@ return packer.startup(function(use)
 	use("folke/todo-comments.nvim") -- used with telescope
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
-  use("rebelot/kanagawa.nvim")
+	use("rebelot/kanagawa.nvim")
 
 	use("tpope/vim-fugitive")
-  use("kylechui/nvim-surround")
+	use("kylechui/nvim-surround")
 	use("windwp/nvim-autopairs")
 	use("nvim-tree/nvim-tree.lua")
 	use("tpope/vim-commentary")
@@ -43,22 +43,27 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/nvim-cmp")
 
+	-- Autocomplete AI
+	use({ "zbirenbaum/copilot-cmp", requires = { { "zbirenbaum/copilot.lua" } } })
+
+  -- use("github/copilot.vim")
+
 	-- Snippet plugins
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 
 	-- Formatting & linters
-	use("jose-elias-alvarez/null-ls.nvim")
+	use("jose-elias-alvarez/null-ls.nvim") -- WARNING: Repository is `archieved`
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 	})
 
-  use({
-    "windwp/nvim-ts-autotag",
-    requires = {"nvim-treesitter"}
-  })
+	use({
+		"windwp/nvim-ts-autotag",
+		requires = { "nvim-treesitter" },
+	})
 
 	use({
 		"ThePrimeagen/harpoon",

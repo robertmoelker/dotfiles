@@ -70,4 +70,8 @@ return packer.startup(function(use)
 		branch = "harpoon2", -- NOTE: This will be changed soon to regular `master`
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+
+  -- LOCAL plugin development
+  use({ "~/Sites/prive/simple-note.nvim"})
+  use({'folke/neodev.nvim'})
 end)

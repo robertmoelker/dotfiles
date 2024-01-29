@@ -20,7 +20,8 @@ vim.g.maplocalleader = " "
 
 -- NORMAL MODE MAPPING --
 -- NvimTree keys
-keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>nn", ":SimpleNoteCreate ", opts)
+keymap("n", "<leader>nt", ":SimpleNoteList<CR>", opts)
 
 -- Telescope keys
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", {
@@ -33,22 +34,28 @@ keymap("n", "<leader>fg", ":Telescope live_grep<CR>", {
 	silent = opts.silent,
 	desc = "Search for string",
 })
-keymap("n", "<leader>fn", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {
+-- NOTE: Should be used instead of the `NvimTree` however this isn't part of my system yet..
+-- keymap("n", "<leader>fn", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", {
+-- 	noremap = opts.noremap,
+-- 	silent = opts.silent,
+-- 	desc = "Open file browser",
+-- })
+keymap("n", "<leader>fn", ":NvimTreeToggle<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
-	desc = "Open file browser",
-})
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", {
-  noremap = opts.noremap,
-  silent = opts.silent,
-  desc = "Find buffer",
-})
-keymap("n", "<leader>ft", ":TodoTelescope<CR>", {
-  noremap = opts.noremap,
-  silent = opts.silent,
-  desc = "Find todos/comments",
+	desc = "Open file tree",
 })
 
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", {
+	noremap = opts.noremap,
+	silent = opts.silent,
+	desc = "Find buffer",
+})
+keymap("n", "<leader>ft", ":TodoTelescope<CR>", {
+	noremap = opts.noremap,
+	silent = opts.silent,
+	desc = "Find todos/comments",
+})
 
 keymap("t", "<esc>", "<C-\\><C-n>", opts)
 keymap("t", "<C-s>", "<C-\\><C-n>", opts)
@@ -112,4 +119,3 @@ keymap("v", "p", '"_dP', opts)
 -- VISUAL BLOCK MAPPING --
 keymap("x", "<A-j>", ":move '>+<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-

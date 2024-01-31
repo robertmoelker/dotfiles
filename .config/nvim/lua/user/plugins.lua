@@ -22,6 +22,8 @@ return packer.startup(function(use)
 	use("folke/todo-comments.nvim") -- used with telescope
 	use("nvim-lualine/lualine.nvim")
 	use("kyazdani42/nvim-web-devicons")
+
+	-- Colorscheme
 	use("rebelot/kanagawa.nvim")
 
 	use("tpope/vim-fugitive")
@@ -46,14 +48,12 @@ return packer.startup(function(use)
 	-- Autocomplete AI
 	use({ "zbirenbaum/copilot-cmp", requires = { { "zbirenbaum/copilot.lua" } } })
 
-  -- use("github/copilot.vim")
-
 	-- Snippet plugins
 	use("hrsh7th/cmp-vsnip")
 	use("hrsh7th/vim-vsnip")
 
 	-- Formatting & linters
-	use("jose-elias-alvarez/null-ls.nvim") -- WARNING: Repository is `archieved`
+	use("nvimtools/none-ls.nvim")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -71,7 +71,7 @@ return packer.startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
-  -- LOCAL plugin development
-  use({ "~/Sites/prive/simple-note.nvim"})
-  use({'folke/neodev.nvim'})
+	-- LOCAL plugin development
+	use({ "~/Sites/prive/simple-note.nvim" })
+	use({ "folke/neodev.nvim" })
 end)

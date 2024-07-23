@@ -14,40 +14,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
-vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false })
-vim.keymap.set("v", "p", '"_dP', {})
-vim.keymap.set("n", "qq", ":q!<cr>", {}) -- force quit
 
--- Set the leader to `<space>`
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-vim.opt.relativenumber = true
-vim.opt.number = true
-vim.opt.scrolloff = 8
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.smarttab = true
-vim.opt.autoindent = true
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
-vim.opt.smarttab = true
-vim.opt.si = true
-vim.opt.ignorecase = true
-vim.opt.showcmd = true
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
-vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
-vim.opt.title = true
-vim.opt.titlestring = "%F (%t)"
-vim.opt.list = true
-vim.opt.listchars = "tab:❘⠀,trail:·,extends:→,precedes:←,nbsp:␣"
+require("config.keymappings")
 
 -- Setup lazy.nvim
 require("lazy").setup({

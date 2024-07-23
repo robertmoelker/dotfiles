@@ -4,8 +4,10 @@ return {
 	build = ":TSUpdate",
 	event = { "VeryLazy" },
 	cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
-	opts = {
-		auto_install = true,
-		additional_vim_regex_highlighting = false,
-	}
+  config = function ()
+    require("nvim-treesitter.configs").setup({
+      auto_install = true,
+      highlight = { enable = true, additional_vim_regex_highlighting = false },
+    })
+  end
 }

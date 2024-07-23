@@ -19,9 +19,12 @@ vim.opt.rtp:prepend(lazypath)
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
 vim.keymap.set("n", " ", "<Nop>", { silent = true, remap = false })
+vim.keymap.set("v", "p", '"_dP', {})
+vim.keymap.set("n", "qq", ":q!<cr>", {}) -- force quit
+
+-- Set the leader to `<space>`
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.opt.clipboard = "unnamedplus"
 
 vim.opt.relativenumber = true
 vim.opt.number = true

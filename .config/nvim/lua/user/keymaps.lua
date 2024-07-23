@@ -66,21 +66,15 @@ keymap("n", "<leader>i", "<cmd>lua vim.lsp.buf.hover()<CR>", {
 	desc = "Show LSP info",
 })
 
-keymap("n", "<leader>p", ":Telescope cder<CR>", {
-	noremap = opts.noremap,
-	silent = opts.silent,
-	desc = "Find project",
-})
-
 -- Scroll remaps (centers cursor)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- Easy way to go through buffers
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
 
 keymap("n", "<leader>bn", ":bnext<CR>", {
 	noremap = opts.noremap,
@@ -97,7 +91,7 @@ keymap("n", "<leader>bd", ":bdelete<CR>", {
 	silent = opts.silent,
 	desc = "Buffer delete",
 })
-keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", {
+keymap("n", "<leader>rr", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", {
 	noremap = opts.noremap,
 	silent = opts.silent,
 	desc = "Formatting",
@@ -105,6 +99,7 @@ keymap("n", "<leader>r", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>
 
 -- Skip the need to press :q to quit
 keymap("n", "qq", ":q!<CR>", opts)
+keymap("n", "<Bs>", "ciw", opts)
 
 -- INSERT MODE MAPPING --
 keymap("i", "<C-s>", "<Esc>:w<CR>", opts)
@@ -116,6 +111,9 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
 
+keymap("v", "<C-r>", "hy:%s/<C-r>h//gc<left><left><left>", opts)
+
 -- VISUAL BLOCK MAPPING --
 keymap("x", "<A-j>", ":move '>+<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+

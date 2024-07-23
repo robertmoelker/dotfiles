@@ -1,6 +1,17 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 require("lspconfig")["tsserver"].setup({
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/home/rm/.local/share/fnm/node-versions/v20.10.0/installation/lib",
+        -- location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+        languages = { "javascript", "typescript", "vue" },
+      }
+    }
+  },
+  filetypes = { "javascript", "typescript", "vue" },
 	capabilities = capabilities,
 	on_attach = function(client)
 		client.server_capabilities.documentFormattingProvider = false
@@ -35,7 +46,15 @@ require("lspconfig")["bashls"].setup({
 	end,
 })
 
-require("lspconfig")["stylelint_lsp"].setup({
+-- TODO: Re-enable stylelint_lsp
+-- require("lspconfig")["stylelint_lsp"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = function(client)
+-- 		client.server_capabilities.documentFormattingProvider = false
+-- 	end,
+-- })
+
+require("lspconfig")["golangci_lint_ls"].setup({
 	capabilities = capabilities,
 	on_attach = function(client)
 		client.server_capabilities.documentFormattingProvider = false
@@ -44,11 +63,14 @@ require("lspconfig")["stylelint_lsp"].setup({
 
 require("lspconfig")["gopls"].setup({
 	capabilities = capabilities,
-	-- on_attach = function(client)
-	-- 	-- client.server_capabilities.documentFormattingProvider = false
-	-- end,
 })
 
+require("lspconfig")["marksman"].setup({
+	capabilities = capabilities,
+	on_attach = function(client)
+		-- client.server_capabilities.documentFormattingProvider = false
+	end,
+})
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

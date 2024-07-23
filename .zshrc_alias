@@ -3,21 +3,6 @@ timezsh() {
   for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
 }
 
-# DATABASE ALIAS COMMANDS
-alias startdb="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=growingminds-sandbox:europe-west4:gm-sandbox-mysql-dev=tcp:3307 -credential_file=growingminds-sandbox-9574e28c3c4f.json"
-alias startdbpreprod="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=growingminds-sandbox:europe-west4:gm-sandbox-mysql-preprod=tcp:3308 -credential_file=growingminds-sandbox-9574e28c3c4f.json"
-alias startdbpreprod8="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=growingminds-sandbox:europe-west4:gm-sandbox-mysql-8-preprod=tcp:3317 -credential_file=growingminds-sandbox-9574e28c3c4f.json"
-alias startdbpreprodsocket="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && sudo ./cloud_sql_proxy -dir=/cloudsql -instances=growingminds-sandbox:europe-west4:gm-sandbox-mysql-preprod -credential_file=growingminds-sandbox-9574e28c3c4f.json"
-alias startdbprodsv="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-stichting-vluchteling:europe-west4:stichting-vluchteling-mysql-prod=tcp:3309 -credential_file=fs-stichting-vluchteling-prod.json"
-alias startdbpreprodgp="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=growingminds-sandbox:europe-west4:gm-sandbox-mysql-preprod=tcp:3310 -credential_file=fs-greenpeace-preprod.json"
-alias startdbprodgp="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-greenpeace:europe-west4:greenpeace-mysql-prod=tcp:3310 -credential_file=fs-greenpeace-d86c770ab6d4.json"
-alias startdbprodzoa="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-zoa:europe-west4:zoa-mysql-prod=tcp:3311 -credential_file=fs-zoa.json"
-alias startdbproddf="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-diabetesfonds:europe-west4:diabetesfonds-mysql-prod=tcp:3312 -credential_file=fs-diabetesfonds.json"
-alias startdbprodwc="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-warchild:europe-west4:warchild-mysql-prod=tcp:3313 -credential_file=fs-warchild.json"
-alias startdbprodnof="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-nationaal-ouderen-fonds:europe-west4:nationaal-ouderen-fonds-mysql-prod=tcp:3314 -credential_file=fs-nationaal-ouderen-fonds-e1b74b79ef47.json"
-alias startdbprodtdh="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-terredeshommes:europe-west4:terredeshommes-mysql-prod=tcp:3315 -credential_file=fs-terredeshommes.json"
-alias startdbprodvv="cd ~/Sites/gm-sandbox-cloud-sql-proxy/ && ./cloud_sql_proxy -instances=fs-vier-voeters:europe-west4:viervoeters-mysql-prod=tcp:3316 -credential_file=fs-viervoeters.json"
-
 alias nvimconf="cd ~/.config/nvim/ && nvim init.lua" 
 alias glazeconf="nvim /mnt/c/Users/rm/.glaze-wm/config.yaml" 
 alias nov="cd ~/Sites/novti/"
@@ -33,10 +18,23 @@ alias config='/usr/bin/git --git-dir=/home/rm/.cfg/ --work-tree=/home/rm'
 alias nvm="fnm"
 
 # Make it easier to open NVIM
-alias vi="nvim"
+alias vi="NVIM_APPNAME=\"nvim-lazy\" nvim"
 alias vim="nvim"
 
 # Setup easier `sail` command for Laravel projects
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 alias t="toggl"
+alias cat="batcat"
+alias g="lazygit"
+
+timer() {
+  if [ "$1" = "stop" ]; then
+    toggl stop
+  else
+    toggl start $1  # start timer with message
+  fi
+
+  toggl.sh        # update the glaze-wm.
+}
+

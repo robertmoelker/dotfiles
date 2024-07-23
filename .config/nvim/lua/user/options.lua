@@ -22,12 +22,17 @@ o.clipboard = "unnamedplus"
 o.title = true
 o.titlestring = "%F (%t)"
 
+o.list = true
+o.listchars = "tab:❘⠀,trail:·,extends:→,precedes:←,nbsp:␣"
+
 -- Disable the default mouse
 o.mouse = 
-
 -- Overwrite the shiftwidth & tab for PHP files
 vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")
+vim.cmd("autocmd FileType go setlocal shiftwidth=4 tabstop=4 autoindent noexpandtab")
 
 -- Set the filetype for EJS files for highlighting
 vim.cmd("autocmd BufRead,BufNewFile *.ejs set filetype=ejs.html")
 vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html.js")
+
+vim.cmd("let g:omni_sql_no_default_maps = 1")

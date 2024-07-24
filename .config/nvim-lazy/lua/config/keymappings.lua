@@ -34,3 +34,9 @@ vim.keymap.set("v", "p", '"_dP', opts)
 vim.keymap.set("n", "qq", ":q!<cr>", opts) -- force quit
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
+
+-- Overwrite the defaults based per filetype
+vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")
+vim.cmd("autocmd FileType go setlocal shiftwidth=4 tabstop=4 autoindent noexpandtab")
+
+

@@ -1,0 +1,11 @@
+[user]
+	email = rmoelker@gmail.com
+	name = Robert Moelker
+
+[core]
+	autocrlf = false
+	editor = nvim
+[init]
+	defaultBranch = master
+[safe]
+	directory = /home/rm/Sites/prive/symfony-docker

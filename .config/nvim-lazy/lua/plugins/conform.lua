@@ -29,7 +29,7 @@ return {
 				php = { "php_cs_fixer" },
 			},
 			notify_on_error = true,
-      notify_no_formatters = true,
+			notify_no_formatters = true,
 			default_format_opts = {
 				lsp_format = "fallback",
 			},

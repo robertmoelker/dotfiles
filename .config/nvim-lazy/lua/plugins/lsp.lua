@@ -1,6 +1,6 @@
 local servers = {
 	lua_ls = {},
-	tsserver = {},
+	ts_ls = {},
 	gopls = {},
 	phpactor = {
 		init_options = {
@@ -22,6 +22,8 @@ local servers = {
 			},
 		},
 	},
+	rust_analyzer = {},
+	volar = {},
 }
 
 return {
@@ -52,7 +54,7 @@ return {
 				lspconfig[server].setup(config)
 			end
 
-      -- Setup autocmd for LSP.
+			-- Setup autocmd for LSP.
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)
@@ -76,6 +78,35 @@ return {
 					vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
 					vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
 					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+				end,
+			})
+		end,
+	},
+	{
+		"mfussenegger/nvim-lint",
+		opts = {
+			events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+			linters_by_ft = {
+				php = { "phpcs" },
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
+				vue = { "eslint_d" },
+			},
+		},
+		config = function(_, opts)
+			require("lint").linters_by_ft = opts.linters_by_ft
+
+			local phpcs = require("lint").linters.phpcs
+			phpcs.args = {
+				"-q",
+				"--standard=PSR12",
+				"--report=json",
+				"-",
+			}
+
+			vim.api.nvim_create_autocmd(opts.events, {
+				callback = function()
+					require("lint").try_lint()
 				end,
 			})
 		end,

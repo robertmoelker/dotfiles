@@ -34,9 +34,13 @@ vim.keymap.set("v", "p", '"_dP', opts)
 vim.keymap.set("n", "qq", ":q!<cr>", opts) -- force quit
 vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
+vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, { scope = 'cursor' })<cr>")
+vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", opts)
 
 -- Overwrite the defaults based per filetype
 vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")
 vim.cmd("autocmd FileType go setlocal shiftwidth=4 tabstop=4 autoindent noexpandtab")
 
-
+-- Set the filetype for EJS files for highlighting
+vim.cmd("autocmd BufRead,BufNewFile *.ejs set filetype=ejs.html")
+vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html.js")

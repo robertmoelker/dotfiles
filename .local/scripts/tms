@@ -4,8 +4,9 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     selected=$(find \
-      ~/Sites \
+      ~/Sites/prive \
       ~/Sites/marketingcloud \
+      ~/Sites/salesforce \
       ~/Sites/novti  \
       ~/Sites/novti/admin  \
       ~/Sites/novti/bundles  \

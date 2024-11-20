@@ -28,6 +28,7 @@ vim.opt.title = true
 vim.opt.titlestring = "%F (%t)"
 vim.opt.list = true
 vim.opt.listchars = "tab:❘⠀,trail:·,extends:→,precedes:←,nbsp:␣"
+vim.opt.cmdheight = 0
 
 -- Set the custom keymappings
 vim.keymap.set("v", "p", '"_dP', opts)

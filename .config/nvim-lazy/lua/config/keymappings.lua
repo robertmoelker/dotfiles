@@ -37,6 +37,9 @@ vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float(nil, { scope = 'cursor' })<cr>")
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", opts)
+vim.keymap.set("n", "<leader>c", "ciw")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Overwrite the defaults based per filetype
 vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")

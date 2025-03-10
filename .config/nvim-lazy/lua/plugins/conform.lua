@@ -7,6 +7,7 @@ return {
 			{
 				"<leader>r",
 				function()
+					--vim.api.nvim_buf_write(0, nil, nil)
 					require("conform").format({ async = true }, function()
 						print("Formatted.")
 					end)

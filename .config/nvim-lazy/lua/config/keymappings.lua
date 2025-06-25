@@ -41,6 +41,9 @@ vim.keymap.set("n", "<leader>c", "ciw")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- Disable the insert mode faster with either jk or kj
+vim.keymap.set("i", "jj", "<esc>")
+
 -- Overwrite the defaults based per filetype
 vim.cmd("autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent")
 vim.cmd("autocmd FileType go setlocal shiftwidth=4 tabstop=4 autoindent noexpandtab")
@@ -48,3 +51,15 @@ vim.cmd("autocmd FileType go setlocal shiftwidth=4 tabstop=4 autoindent noexpand
 -- Set the filetype for EJS files for highlighting
 vim.cmd("autocmd BufRead,BufNewFile *.ejs set filetype=ejs.html")
 vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html.js")
+
+vim.cmd("autocmd BufRead,BufNewFile *.tf set filetype=terraform")
+vim.cmd("autocmd BufRead,BufNewFile *.bicep set filetype=bicep")
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    local root = vim.fn.findfile("package.json", ".;")
+    if root ~= "" then
+      vim.fn.chdir(vim.fn.fnamemodify(root, ":h"))
+    end
+  end,
+})

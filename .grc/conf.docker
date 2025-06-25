@@ -1,0 +1,23 @@
+# docker images / ps / other table outputs
+regexp=\b(REPOSITORY|TAG|IMAGE ID|CONTAINER ID|CREATED|SIZE|STATUS|PORTS)\b
+colours=bold green
+
+# docker build output (plain progress mode)
+regexp=\b(Step [0-9]+\/[0-9]+)\b
+colours=bold cyan
+
+regexp=\b(Using cache)\b
+colours=blue
+
+regexp=\b(RUN|COPY|ADD|WORKDIR|FROM|ENV|CMD|ENTRYPOINT|LABEL|EXPOSE|VOLUME|USER)\b
+colours=bold yellow
+
+regexp=\b(ERROR|error|failed|FAILURE)\b
+colours=bold red
+
+regexp=\b(SUCCESS|Built|completed)\b
+colours=bold green
+
+regexp=\b(Downloading|Pulling|Extracting|Verifying)\b
+colours=magenta
+

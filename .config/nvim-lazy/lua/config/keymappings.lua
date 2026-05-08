@@ -54,6 +54,7 @@ vim.cmd("autocmd BufRead,BufNewFile *.hbs set filetype=html.js")
 
 vim.cmd("autocmd BufRead,BufNewFile *.tf set filetype=terraform")
 vim.cmd("autocmd BufRead,BufNewFile *.bicep set filetype=bicep")
+vim.cmd("autocmd BufRead,BufNewFile *.tfstate set filetype=json")
 
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()

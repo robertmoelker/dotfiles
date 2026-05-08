@@ -18,6 +18,8 @@ return {
           return {
             -- update kanagawa to handle new treesitter highlight captures
             ["@string.regexp"] = { link = "@string.regex" },
+            ["@keyword.type"] = { link = "Type" },
+            ["@keyword.modifier"] = { link = "Keyword" },
             ["@variable.parameter"] = { link = "@parameter" },
             ["@exception"] = { link = "@exception" },
             ["@string.special.symbol"] = { link = "@symbol" },
